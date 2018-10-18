@@ -1,0 +1,34 @@
+{
+  "manifest_version": "2",
+  "api_version": "1",
+  "name": "tmux session extension",
+  "description": "tmux session extension, with support for multiple sockets",
+  "developer_name": "Andreas Johansson",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.4
+  },
+  "preferences": [
+    {
+      "id": "tmux_kw",
+      "type": "keyword",
+      "name": "tmux",
+      "description": "tmux extension keyword",
+      "default_value": "tmux"
+    },
+    {
+      "id": "tmux_attach_cmd",
+      "type": "input",
+      "name": "Attach command",
+      "description": "Command for attaching to a tmux session",
+      "default_value": ""
+    },
+    {
+      "id": "tmux_sockets",
+      "type": "input",
+      "name": "Sockets",
+      "description": "Extra tmux sockets to scan for sessions",
+      "default_value": ""
+    }
+  ]
+}
