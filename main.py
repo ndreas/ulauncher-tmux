@@ -56,9 +56,10 @@ class KeywordQueryEventListener(EventListener):
 
         if arg is not None:
             arg = arg.lower()
-            sessions = filter(lambda s: arg in s['search'], sessions)
+            sessions = [s for s in sessions if arg in s['search']]
 
-        return RenderResultListAction(map(extension.build_result, sessions))
+        return RenderResultListAction(
+            list(map(extension.build_result, sessions)))
 
 
 class PreferencesEventListener(EventListener):
