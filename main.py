@@ -103,6 +103,7 @@ def tmux_sessions(socket_name=None):
         if attached == b'0':
             title = '(Detached) {}'.format(title)
 
+        session_name = session_name.decode('UTF-8')
         description = 'Session {}'.format(session_name)
         search = '{} {}'.format(
             title.lower(),
